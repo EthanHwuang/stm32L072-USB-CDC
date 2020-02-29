@@ -114,15 +114,15 @@ main (void)
   HAL_GPIO_WritePin (GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
 
   printf ("\r\n-- Beginning ...  ---\r\n");
-  /* Init Device Library */
-  printf ("Start USB\r\n");
-  USBD_Init (&hUsbDeviceFS, &FS_Desc, 0);
-  /* Add Supported Class */
-  USBD_RegisterClass (&hUsbDeviceFS, USBD_CDC_CLASS);
-  /* Add CDC Interface Class */
-  USBD_CDC_RegisterInterface (&hUsbDeviceFS, &USBD_Interface_fops_FS);
-  /* Start Device Process */
-  USBD_Start(&hUsbDeviceFS);
+//  /* Init Device Library */
+//  printf ("Start USB\r\n");
+//  USBD_Init (&hUsbDeviceFS, &FS_Desc, 0);
+//  /* Add Supported Class */
+//  USBD_RegisterClass (&hUsbDeviceFS, USBD_CDC_CLASS);
+//  /* Add CDC Interface Class */
+//  USBD_CDC_RegisterInterface (&hUsbDeviceFS, &USBD_Interface_fops_FS);
+//  /* Start Device Process */
+//  USBD_Start(&hUsbDeviceFS);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

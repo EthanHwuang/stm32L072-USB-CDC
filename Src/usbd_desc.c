@@ -65,9 +65,9 @@
 
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
-#define USBD_MANUFACTURER_STRING     "STMicroelectronics"
+#define USBD_MANUFACTURER_STRING     "Yango"
 #define USBD_PID_FS     22336
-#define USBD_PRODUCT_STRING_FS     "STM32 Virtual ComPort"
+#define USBD_PRODUCT_STRING_FS     "Virtual ComPort"
 #define USBD_CONFIGURATION_STRING_FS     "CDC Config"
 #define USBD_INTERFACE_STRING_FS     "CDC Interface"
 
@@ -348,8 +348,8 @@ static void Get_SerialNum(void)
 
   if (deviceserial0 != 0)
   {
-    IntToUnicode(deviceserial0, &USBD_StringSerial[2], 8);
-    IntToUnicode(deviceserial1, &USBD_StringSerial[18], 4);
+    IntToUnicode(deviceserial0, &USBD_StringSerial[2], 4);
+    // IntToUnicode(deviceserial1, &USBD_StringSerial[18], 4);
   }
 }
 
