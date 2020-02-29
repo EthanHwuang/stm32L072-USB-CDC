@@ -340,6 +340,8 @@ static void Get_SerialNum(void)
 {
   uint32_t deviceserial0, deviceserial1, deviceserial2;
 
+  UNUSED(deviceserial1);
+
   deviceserial0 = *(uint32_t *) DEVICE_ID1;
   deviceserial1 = *(uint32_t *) DEVICE_ID2;
   deviceserial2 = *(uint32_t *) DEVICE_ID3;
