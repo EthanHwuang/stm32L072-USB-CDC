@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
 #include <stdio.h>
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -125,12 +126,19 @@ void StartDefaultTask(void const * argument)
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
+  uint8_t result;
+  uint8_t buf[2] = {'h','i'};
   /* Infinite loop */
   for(;;)
   {
     osDelay(1000);
     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
     printf("Toggle\r\n");
+
+    // send out to CDC
+    printf("Send to USB\r\n");
+    result = CDC_Transmit_FS(buf, 2);
+    printf("Send USB :%d\r\n", result);
   }
 	osThreadTerminate(NULL);
   /* USER CODE END StartDefaultTask */
